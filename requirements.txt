@@ -1,0 +1,5 @@
+nibabel>=5.1.0
+matplotlib>=3.8.0
+numpy>=1.26.0
+plotly>=5.22.0
+nilearn>=0.10.0
