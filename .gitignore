@@ -1,2 +1,3 @@
 *.nii.gz
 MSLesSeg-Dataset/
+.DS_Store
