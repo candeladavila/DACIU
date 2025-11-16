@@ -125,9 +125,16 @@ def main():
                 # Calculamos la ruta relativa desde el split para mantener estructura
                 rel_root = os.path.relpath(root, source_split_dir)
 
-                # Directorio base de salida para este conjunto
-                # p.ej. train/P1/T1/P1_T1 o test/P54/P54
-                output_base_dir = os.path.join(dest_split_dir, rel_root, base_name)
+                # Directorio base de salida:
+                # - En train: p.ej. train/P1/T1/P1_T1
+                # - En test:  p.ej. test/P54 (evitar test/P54/P54)
+                if os.path.basename(rel_root) == base_name:
+                    # Ya estamos en carpeta con el nombre base (caso test/P54)
+                    output_base_dir = os.path.join(dest_split_dir, rel_root)
+                else:
+                    # Añadimos carpeta base_name (caso train/P1/T1/P1_T1)
+                    output_base_dir = os.path.join(dest_split_dir, rel_root, base_name)
+
                 os.makedirs(output_base_dir, exist_ok=True)
 
                 process_sample(modality_paths, output_base_dir)
