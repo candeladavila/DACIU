@@ -1,5 +1,23 @@
+# --- Paquetes necesarios para tus scripts ---
 nibabel>=5.1.0
 matplotlib>=3.8.0
 numpy>=1.26.0
 plotly>=5.22.0
 nilearn>=0.10.0
+
+# --- Dependencias fundamentales para nnU-Net v2 ---
+torch==2.2.1        # CPU version for macOS; works on Python 3.10
+torchaudio==2.2.1
+torchvision==0.17.1
+
+SimpleITK>=2.2.1
+scikit-image>=0.22.0
+tqdm>=4.66.0
+batchgenerators>=0.24
+
+# nnU-Net v2
+nnunetv2>=2.2.1
+
+# Misc utils
+pillow>=10.0.0
+scipy>=1.11.0

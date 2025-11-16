@@ -1,3 +1,7 @@
 *.nii.gz
 MSLesSeg-Dataset/
 .DS_Store
+nnUNet_preprocessed/
+nnUNet_raw/
+nnUNet_results/
+venv310/
